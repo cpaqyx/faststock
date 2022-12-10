@@ -1,9 +1,9 @@
-/.idea/
 /configure/
 /log/
 /release/
 /private/
 .vscode/
+.idea/
 *.xml
 *.html
 *.pkl
