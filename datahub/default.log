@@ -1,0 +1,6 @@
+2022-12-10 11:19:06.270 | ERROR    | __main__:sync_stock_basic_info:38 - (pymysql.err.OperationalError) (1049, "Unknown database 'fast_stock'")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-12-10 11:20:52.803 | ERROR    | __main__:sync_stock_basic_info:38 - (pymysql.err.OperationalError) (1049, "Unknown database 'fast_stock'")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-12-10 11:21:34.399 | ERROR    | __main__:sync_stock_basic_info:38 - (pymysql.err.OperationalError) (1049, "Unknown database 'fast_stock'")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
