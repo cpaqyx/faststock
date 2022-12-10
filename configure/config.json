@@ -26,56 +26,6 @@
       }
     },
     "data_path": "D:\\git\\faststock\\data",
-    "mongo": {
-      "fast_mongo": {
-        "host": "",
-        "port": 11111,
-        "user": "",
-        "password": ""
-      },
-      "local": {
-        "host": "127.0.0.1",
-        "port": 17017,
-        "user": null,
-        "password": null
-      }
-    },
-    "WECHAT_ID": "",
-    "jsl_cookies": {
-      "auto_reload": "",
-      "kbzw_r_uname": "",
-      "kbz_newcookie": "1",
-      "kbzw__Session": "",
-      "Hm_lvt_164fe01b1433a19b507595a43bf58262": "",
-      "Hm_lpvt_164fe01b1433a19b507595a43bf58262": ""
-    },
-    "twillio": {
-      "twilio_account_sid": "",
-      "twilio_auth_token": ""
-    },
-    "jsl_monitor": {
-      "EXPIRE_TIME": 1800,
-      "MONITOR_PERCENT": 8,
-      "ACCESS_INTERVAL": 20,
-      "JSL_USER": "",
-      "JSL_PASSWORD": ""
-    },
-    
-    "aliyun": {
-      "EMAIL_USER_XT": "",
-      "EMAIL_USER_ALI": "",
-      "LOGIN_EMAIL_ALYI_PASSWORD": ""
-    },
-    "ts_token": "46e4b85121e8e8b130b0994291723ba2b68351ab107108731241e514",
-    "holding_file": "v",
-    "xc_server": "",
-    "xc_token_pro": "",
-    
-    "enterprise_wechat": {
-      "userid": "",
-      "agentid": "",
-      "corpid": "",
-      "corpsecret": ""
-    }
+    "ts_token": "46e4b85121e8e8b130b0994291723ba2b68351ab107108731241e514"
   }
   
