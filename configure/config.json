@@ -1,0 +1,31 @@
+{
+    "mysql": {
+      "other": {
+        "host": "127.0.0.1",
+        "port": 3306,
+        "user": "root",
+        "password": "root"
+      },
+      "fast_stock": {
+        "host": "127.0.0.1",
+        "port": 3306,
+        "user": "root",
+        "password": "root"
+      }
+    },
+    "redis": {
+      "fast_redis": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "password": ""
+      }
+    },
+    "mail": {
+      "fast_email": {
+        "user": ""
+      }
+    },
+    "data_path": "data",
+    "ts_token": ""
+  }
+  

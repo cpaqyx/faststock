@@ -1,0 +1,17 @@
+easytrader
+loguru
+rsa
+redis
+pypinyin
+sqlalchemy
+pandas
+tushare
+akshare
+parsel
+loguru
+xlwt
+easyquotation
+loguru
+rsa
+pymongo
+pymysql
