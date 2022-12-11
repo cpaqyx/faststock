@@ -31,7 +31,7 @@ class StockSyncDay(BaseService):
         select 
             I.* 
         from 
-            stock_basic_info I left join stock_basic_status S on S.`index` = I.`index` 
+            stock_basic_info I left join stock_basic_status S on S.ts_code = I.ts_code
         where 
             S.id is null or S.`last_value` < :last_value;
         """
@@ -41,7 +41,7 @@ class StockSyncDay(BaseService):
             basicStatus = session.query(StockBasicStatus).filter(StockBasicStatus.index == item.index
                                                                  and StockBasicStatus.line_type == LINE_TYPE).first()
             if basicStatus is None:
-                basicStatusNew = StockBasicStatus(index=item.index, code=item.code, sync_status=0, app_mode=1,
+                basicStatusNew = StockBasicStatus(index=item.index, ts_code=item.ts_code, sync_status=0, app_mode=1,
                                                   last_success_date=datetime.strptime('1900-01-01', '%Y-%m-%d'),
                                                   degree=10000, allow_delay_second=1440*60, record_status=1,
                                                   created_on=datetime.now(), updated_on=datetime.now(),

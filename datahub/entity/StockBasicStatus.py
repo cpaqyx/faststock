@@ -13,7 +13,7 @@ class StockBasicStatus(BaseEntity):
 
     id = Column(Integer, primary_key=True)
     index = Column(Integer())
-    code = Column(String(20))
+    ts_code = Column(String(20))
 
     line_type = Column(String(20))
     sync_status = Column(Integer())

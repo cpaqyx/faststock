@@ -46,7 +46,7 @@ DROP TABLE IF EXISTS `stock_basic_status`;
 CREATE TABLE `stock_basic_status` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `index` bigint(20) DEFAULT NULL COMMENT 'basic_info 表序号',
-  `code` varchar(10) DEFAULT NULL COMMENT '股票代码',
+  `ts_code` varchar(10) DEFAULT NULL COMMENT '股票代码',
   `line_type` varchar(10) DEFAULT NULL COMMENT 'day|5min|15min',
   `sync_status` tinyint(4) DEFAULT NULL COMMENT '0:未开始;1:进行中;2:完成;3:失败',
   `last_value` varchar(50) DEFAULT NULL COMMENT '最后同步到哪个时间点',
@@ -61,7 +61,7 @@ CREATE TABLE `stock_basic_status` (
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_on` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1402 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='基本信息状态表';
+) ENGINE=InnoDB AUTO_INCREMENT=5025 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='基本信息状态表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `stock_line_day` (
   `vol` float DEFAULT NULL,
   `amount` float DEFAULT NULL,
   KEY `ix_tb_daily_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5279361 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12663590 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,4 +102,4 @@ CREATE TABLE `stock_line_day` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-10 20:40:33
+-- Dump completed on 2022-12-11 14:15:59
