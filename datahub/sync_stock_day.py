@@ -2,7 +2,7 @@ __author__ = 'fastwave'
 # @Time : 2022/12/10 20:08
 # @Author : fastwave 363642626@qq.com
 
-import datetime
+import datetime as dt
 from datetime import datetime
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
@@ -16,7 +16,15 @@ class StockSyncDay(BaseService):
     def async_stock_line_day(self):
         DBSession = sessionmaker(self.engine)
         session = DBSession()
-        curDateStr = datetime.strftime(datetime.now(), '%Y%m%d')
+        curDate = datetime.now()
+
+        # 周日、周一仍同步上一周的，把时间退回到前面的周六
+        if curDate.weekday().__eq__(6):
+            curDate = curDate - dt.timedelta(days=1)
+        if curDate.weekday().__eq__(0):
+            curDate = curDate - dt.timedelta(days=2)
+
+        curDateStr = datetime.strftime(curDate, '%Y%m%d')
 
         # 查询出未同步到当天的股票基本信息，已同步的忽略
         sql = """
@@ -45,14 +53,15 @@ class StockSyncDay(BaseService):
                                                                      and StockBasicStatus.line_type == LINE_TYPE
                                                                      and StockBasicStatus.code == item.code).first()
 
+            # 如果上次状态标记未成功更新为2，仍在进行中，则先删除上次未确认部分
+            if basicStatus.sync_status == 1:
+                session.execute("delete from stock_line_day where ts_code='{}' and trade_date >= '{}'"
+                                .format(item.ts_code, curDateStr))
+                session.commit()
+
             # 置为进行中
             basicStatus.updated_on = datetime.now()
             basicStatus.sync_status = 1
-            session.commit()
-
-            # 先删除上次未确认部分
-            session.execute("delete from stock_line_day where ts_code='{}' and trade_date >= '{}'"
-                            .format(item.ts_code, curDateStr))
             session.commit()
 
             # 下载单个股票日线数据（会自动commit）
