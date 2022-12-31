@@ -103,3 +103,5 @@ CREATE TABLE `stock_line_day` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-12-11 14:15:59
+
+create index idx_ts_code on stock_line_day(ts_code);
