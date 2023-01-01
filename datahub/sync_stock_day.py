@@ -7,6 +7,7 @@ from datetime import datetime
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
 from common.BaseService import BaseService
+from common.CommonUtil import get_last_work_day, get_next_work_day
 from datahub.entity.StockBasicStatus import StockBasicStatus
 LINE_TYPE = 'day'
 
@@ -16,18 +17,15 @@ class StockSyncDay(BaseService):
     def async_stock_line_day(self):
         db_session = sessionmaker(self.engine)
         session = db_session()
-        cur_date = datetime.now()
-
-        # 周日、周一仍同步上一周的，把时间退回到前面的周六
-        if cur_date.weekday().__eq__(6) or cur_date.hour < 18:
-            cur_date = cur_date - dt.timedelta(days=1)
-        elif cur_date.weekday().__eq__(0):
-            cur_date = cur_date - dt.timedelta(days=2)
+        now = datetime.now()
 
         # 本次要同步到的日期
+        cur_date = get_last_work_day(now)
         cur_date_str = datetime.strftime(cur_date, '%Y%m%d')
+
         # 下次开始同步的时间点
-        next_date_str = datetime.strftime(cur_date + dt.timedelta(days=1), '%Y%m%d')
+        next_date = get_next_work_day(now)
+        next_date_str = datetime.strftime(next_date, '%Y%m%d')
 
         # 查询出未同步到当天的股票基本信息，已同步的忽略
         sql = """

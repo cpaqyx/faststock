@@ -13,3 +13,4 @@
 *.pyc
 .DS_Store
 data.cfg
+.ipynb_checkpoints
