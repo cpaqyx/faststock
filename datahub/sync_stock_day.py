@@ -2,13 +2,14 @@ __author__ = 'fastwave'
 # @Time : 2022/12/10 20:08
 # @Author : fastwave 363642626@qq.com
 
-import datetime as dt
 from datetime import datetime
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
+
 from common.BaseService import BaseService
 from common.CommonUtil import get_last_work_day, get_next_work_day
 from datahub.entity.StockBasicStatus import StockBasicStatus
+
 LINE_TYPE = 'day'
 
 

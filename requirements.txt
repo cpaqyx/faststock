@@ -16,3 +16,4 @@ rsa
 pymongo
 pymysql
 mplfinance
+sklearn
