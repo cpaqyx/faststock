@@ -1,12 +1,8 @@
 from sqlalchemy.orm import sessionmaker
 
-from analyse.entity.stock_ext_status import stock_ext_status
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond
-import pandas as pd
-from datetime import datetime
+from model.stock_ext_status import stock_ext_status
 
-from common.dao_base_service import dao_base_service
+from dao.dao_base_service import dao_base_service
 
 
 # 扩展状态类

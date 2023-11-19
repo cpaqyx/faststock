@@ -1,13 +1,13 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2023/1/15 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import Binarizer
 
-from analyse.entity.StockLineDayCoef import StockLineDayCoef
+from model.StockLineDayCoef import StockLineDayCoef
 
 
 # 相关性测试

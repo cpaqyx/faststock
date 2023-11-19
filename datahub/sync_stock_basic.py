@@ -1,20 +1,21 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2022/12/10 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 import datetime
 import time
-from common.BaseService import BaseService
+from common.base_service import BaseService
 
 
-class SyncStockBasic(BaseService):
+class sync_stock_basic(BaseService):
 
-    def sync_stock_basic_info(self, retry=5):
+    def sync_stock_basic_info(self, retry=2):
         # 需要添加异常处理 重试次数
         count = 0
         df = None
         while count < retry:
             try:
+                # 120积分，仅能在1小时内调用一次
                 df = self.pro.stock_basic(exchange='', list_status='', fields='')
             except Exception as e:
                 self.logger.info(e)
@@ -26,7 +27,7 @@ class SyncStockBasic(BaseService):
 
         if count == retry:
             self.notify(title=f'{self.__class__.__name__}获取股市基本数据失败')
-            exit(0)
+            return "获取股市基本数据失败"
 
         if df is not None:
             df = df.reset_index(drop=True)
@@ -47,7 +48,7 @@ class SyncStockBasic(BaseService):
 
 
 def main():
-    obj = SyncStockBasic()
+    obj = sync_stock_basic()
     obj.sync_stock_basic_info()
 
 

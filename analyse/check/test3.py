@@ -1,9 +1,7 @@
 import pandas as pd
-import numpy as np
 from pyfinance import TSeries
 import tushare as ts
 
-from analyse.dao.stock_line_day_dao import stock_line_day_dao
 
 def get_data(code,start='2011-01-01',end=''):
     df=ts.get_k_data(code,start,end)
@@ -29,13 +27,13 @@ def get_data(code,start='2011-01-01',end=''):
 # tss = TSeries(ret)
 # anl_ret = tss.anlzd_ret()
 
-list1 = stock_line_day_dao().get_stock_line_day("600036.SH", "20200601", "20221230")
-list1.index=pd.to_datetime(list1.trade_date)
-# ret = list1.close.values
-ret2 = list1.close/list1.close.shift(1)-1
-tss = TSeries(ret2)
-anl_ret = tss.anlzd_ret()
-print(f'年化收益率：{anl_ret*100:.2f}%')
+# list1 = stock_line_day_dao().get_stock_line_day("600036.SH", "20200601", "20221230")
+# list1.index=pd.to_datetime(list1.trade_date)
+# # ret = list1.close.values
+# ret2 = list1.close/list1.close.shift(1)-1
+# tss = TSeries(ret2)
+# anl_ret = tss.anlzd_ret()
+# print(f'年化收益率：{anl_ret*100:.2f}%')
 
 # from datetime import datetime
 #

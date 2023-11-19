@@ -1,8 +1,7 @@
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond
+from common.common_util import get_stock_cond
 import pandas as pd
 
-from common.dao_base_service import dao_base_service
+from dao.dao_base_service import dao_base_service
 
 
 # 数据
@@ -88,7 +87,8 @@ class stock_line_day_dao(dao_base_service):
 
     def get_stock_line_day(self, code_or_name, start_date, end_date):
         where_cond = get_stock_cond(self, code_or_name, start_date, end_date, "")
-        sql = "select * from stock_line_day_view where 1=1 {} order by trade_date asc;"
+        # sql = "select * from stock_line_day_view where 1=1 {} order by trade_date asc;"
+        sql = "select * from stock_line_day_qfq_view where 1=1 {} order by trade_date asc;"
         sql = sql.format(where_cond)
         stock_day_list = pd.read_sql(sql, self.engine)
         return stock_day_list

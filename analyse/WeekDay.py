@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond
+from common.base_service import BaseService
+from common.common_util import get_stock_cond
 
 
 class WeekDay(BaseService):

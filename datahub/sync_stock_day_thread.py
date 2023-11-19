@@ -1,17 +1,16 @@
-__author__ = 'fastwave'
+__author__ = 'stock_a_ths_client'
 # @Time : 2022/12/10 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 import datetime as dt
 from datetime import datetime
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
-from common.BaseService import BaseService
-from datahub.entity.StockBasicStatus import StockBasicStatus
+from common.base_service import BaseService
+from model.StockBasicStatus import StockBasicStatus
 
 from concurrent.futures import ThreadPoolExecutor
 import threading
-import time
 
 LINE_TYPE = 'day'
 

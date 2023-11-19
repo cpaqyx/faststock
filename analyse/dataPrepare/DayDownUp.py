@@ -1,8 +1,8 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2023/1/15 22:45
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
-from analyse.entity.StockLineDayUpDown import StockLineDayUpDown
+from model.StockLineDayUpDown import StockLineDayUpDown
 
 
 # 统计N天内涨跌：N天统计当天的前N天，统计前N天的情况，含：上涨下跌天数、最大连续上涨/下跌天数、大涨/跌天数

@@ -1,28 +1,35 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
+
+from datetime import datetime
+
 # @Time : 2022/12/10 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 import tushare as ts
 
-from common.CommonUtil import get_stock_cond
-from common.ConfigTool import DBSelector, config_dict
+from common.common_util import get_stock_cond
+from common.config_tool import DBSelector, config_dict
 from loguru import logger
 from sqlalchemy.orm import sessionmaker
 
-from datahub.entity.StockBasicInfo import StockBasicInfo
+from common.log_util import log_util
+from model.StockBasicInfo import StockBasicInfo
 
 
 class BaseService(object):
 
-    def __init__(self, logfile='../log/default.log'):
+    def __init__(self):
         # tushare
         ts_token = config_dict('ts_token')
         ts.set_token(ts_token)
         self.pro = ts.pro_api()
+        self.ts = ts
 
         # logger
-        self.logger = logger
-        self.logger.add(logfile)
+        self.logger = log_util("base_service").get_log()
+        # self.logger = logger
+        # logfile = "../log/{}.log".format(datetime.strftime(datetime.now(), '%Y%m%d'))
+        # self.logger.add(sink=logfile, encoding='utf-8', level='WARNING')
 
         # db
         self.engine = DBSelector().get_engine()

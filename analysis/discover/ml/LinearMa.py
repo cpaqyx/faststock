@@ -1,19 +1,14 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2023/1/15 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 import numpy as np
-import pandas as pd
 import sklearn
 from pandas import Series
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, explained_variance_score
-from sqlalchemy.orm import sessionmaker
 from sklearn import linear_model
 
-from analyse.dataPrepare.DayMa import ma_total
-from analyse.entity.StockLineDayCoef import StockLineDayCoef
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond
+from model.StockLineDayCoef import StockLineDayCoef
 
 
 # 线性回归

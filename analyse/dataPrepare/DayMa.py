@@ -1,9 +1,9 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2023/1/15 22:45
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 # from sqlalchemy import null
-from analyse.entity.StockLineDayMa import StockLineDayMa
+from model.StockLineDayMa import StockLineDayMa
 import talib as ta
 import pandas as pd
 

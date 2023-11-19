@@ -1,12 +1,9 @@
 from pyalgotrade import plotter, strategy
 from pyalgotrade.barfeed import quandlfeed
-from pyalgotrade.stratanalyzer import sharpe
 from pandas.plotting import register_matplotlib_converters
 from pyalgotrade.stratanalyzer import returns, sharpe, drawdown, trades
 from pyalgotrade import broker
-from pyalgotrade_tushare import tools, barfeed
-
-from analyse.dao.stock_line_day_dao import stock_line_day_dao
+from pyalgotrade_tushare import tools
 
 
 class MyStrategy(strategy.BacktestingStrategy):

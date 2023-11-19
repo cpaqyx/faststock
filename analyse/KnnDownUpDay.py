@@ -1,10 +1,7 @@
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sqlalchemy.orm import sessionmaker
-from analyse.entity.StockLineDayUpDown import StockLineDayUpDown
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond, get_up_down_grade, get_up_down_grade_color, export_to_excel
+from common.base_service import BaseService
+from common.common_util import get_stock_cond, get_up_down_grade_color
 
 
 # 统计N天内涨跌

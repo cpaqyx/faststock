@@ -1,6 +1,6 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2023/1/15 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 
 
@@ -13,7 +13,6 @@ __author__ = 'fastwave'
 # pyalgotrade量化回测框架简单试用
 # https://zhuanlan.zhihu.com/p/562830162
 
-
 # 几款回测工具对比
 # https://zhuanlan.zhihu.com/p/151897607
 
@@ -22,19 +21,15 @@ import pandas as pd
 from sqlalchemy import false
 from sqlalchemy.orm import sessionmaker
 
-from analyse.dao.stock_basic_status_dao import stock_basic_status_dao
-from analyse.dao.stock_ext_status_dao import stock_ext_status_dao
-from analyse.dataPrepare.DayDownUp import down_up_total
-from analyse.dataPrepare.DayMa import ma_total, up_total
-from analyse.entity.stock_ext_status import stock_ext_status
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond, get_my_follow_sql, get_default_end_date, get_my_all_sql
+from dao.stock_basic_status_dao import stock_basic_status_dao
+from dao.stock_ext_status_dao import stock_ext_status_dao
+from analyse.dataPrepare.DayMa import up_total
+from model.stock_ext_status import stock_ext_status
+from common.common_util import get_stock_cond, get_default_end_date
 from common.constant_common import DEFAULT_START_DATE
 from datetime import datetime
 
-import talib as ta
-
-from common.dao_base_service import dao_base_service
+from dao.dao_base_service import dao_base_service
 
 
 # 按天统计各类指标

@@ -1,6 +1,6 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 # @Time : 2023/1/2 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base

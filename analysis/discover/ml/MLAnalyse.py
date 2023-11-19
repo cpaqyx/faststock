@@ -1,19 +1,13 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 
 from datetime import datetime
 
 # @Time : 2023/1/15 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
-import pandas as pd
-from sqlalchemy.orm import sessionmaker
-
-from analyse.dao.stock_line_day_dao import stock_line_day_dao
-from analyse.dataPrepare.DayMa import ma_total
-from analyse.ml.KnnMa import knn_ref
-from analyse.ml.LinearMa import line_total, line_ref
-from common.BaseService import BaseService
-from common.CommonUtil import get_stock_cond
+from dao.stock_line_day_dao import stock_line_day_dao
+from analysis.discover.ml.KnnMa import knn_ref
+from common.base_service import BaseService
 
 
 # 按天统计各类指标

@@ -1,14 +1,11 @@
-__author__ = 'fastwave'
+__author__ = 'FL'
 
-from datetime import datetime
-
-from analyse.entity.stock_strategy_detial import stock_strategy_detail
-from common.BaseService import BaseService
+from model.stock_strategy_detial import stock_strategy_detail
 from common.constant_common import COND_FIELD_NAME,  OPTION_TYPE_BUY, OPTION_TYPE_SELL
 
 
 # @Time : 2023/1/15 20:08
-# @Author : fastwave 363642626@qq.com
+# @Author : FL 363642626@qq.com
 
 # 策略验证
 def run_strategy(stock_list, buy_cond, sell_cond, params):
